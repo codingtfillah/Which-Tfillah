@@ -21,5 +21,5 @@ for (let i = 0; i < choicesCount; i++) {
 const correctAnswer = choices[randint(0, choices.length-1)]
 
 export const getChoices = () => {
-    return (correctAnswer, choices)
+    return [correctAnswer, choices]
 }
