@@ -18,6 +18,8 @@ for (let i = 0; i < choicesCount; i++) {
     }
 }
 
-const correct_answer = choices[randint(0, choices.length-1)]
+const correctAnswer = choices[randint(0, choices.length-1)]
 
-export {correct_answer, choices}
+export const getChoices = () => {
+    return (correctAnswer, choices)
+}
