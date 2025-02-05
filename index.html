@@ -1,6 +1,6 @@
 <script type="module">
   import {getChoices} from "./ImageChooser.js"
-  const printChoices = () => {
+  window.printChoices = () => {
     choicesStuff = getChoices()
     alert(choicesStuff[0])
     alert(choicesStuff[1])
