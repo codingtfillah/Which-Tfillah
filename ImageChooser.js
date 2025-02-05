@@ -8,7 +8,7 @@ choicesCount = 4
 
 choices = []
 for (let i = 0; i < choicesCount; i++) {
-    dictLength = Object.keys(myDict).length
+    dictLength = Object.keys(idDict).length
     if (i < dictLength) {
         nextChoice = `id-${randint(1, dictLength)}`
         while (choices.includes(nextChoice)) {
