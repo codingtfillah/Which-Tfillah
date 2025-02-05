@@ -1,4 +1,4 @@
-import {idDict} from "./idDict.js"
+import {idDict} from "./IdDict.js"
 
 const randint = (start, end) => {
     return Math.floor(Math.random() * (end - start + 1) + start)
