@@ -1,9 +1,3 @@
-const randint = (start, end) => {
-    return Math.floor(Math.random() * (end - start + 1) + start)
-}
-
-choicesCount = 4
-
 myDict = {
     "id-1" : "shema",
     "id-2" : "ahava raba",
@@ -12,6 +6,12 @@ myDict = {
     "id-5" : "halelu",
     "id-6" : "ashrei",
 }
+
+const randint = (start, end) => {
+    return Math.floor(Math.random() * (end - start + 1) + start)
+}
+
+choicesCount = 4
 
 choices = []
 for (let i = 0; i < choicesCount; i++) {
