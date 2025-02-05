@@ -1,4 +1,4 @@
-idDict = {
+export const idDict = {
     "id-1" : "shema",
     "id-2" : "ahava raba",
     "id-3" : "modeh ani",
