@@ -1,11 +1,4 @@
-myDict = {
-    "id-1" : "shema",
-    "id-2" : "ahava raba",
-    "id-3" : "modeh ani",
-    "id-4" : "amidah",
-    "id-5" : "halelu",
-    "id-6" : "ashrei",
-}
+import {idDict} from "./idDict.js"
 
 const randint = (start, end) => {
     return Math.floor(Math.random() * (end - start + 1) + start)
