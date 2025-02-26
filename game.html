@@ -2,7 +2,7 @@
   import {getChoices} from "./ImageChooser.js"
   window.returnChoices = () => {
     let choicesStuff = getChoices()
-    return { choicesStuff[0], choicesStuff[1] }
+    return [choicesStuff[0], choicesStuff[1]]
   }
 </script>
 
