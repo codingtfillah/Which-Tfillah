@@ -23,7 +23,8 @@
   
   function showImage(time) {
     document.getElementById("image").style.display = "block"
-    setTimout(()=>{document.getElementById("image").style.display="none"}, time)
+    setTimeout(()=>{document.getElementById("image").style.display="none"}, time)
+  }
   
   function doRound() {
     let choices = returnChoices()
@@ -59,8 +60,6 @@
     assignImage()
     showImage(timeShown)
   }
-
-  doRound()
 </script>
 
 
@@ -73,6 +72,11 @@
   <button id="button3"></button>
   <button id="button4"></button>
 </div>
+
+
+<script>
+  doRound()
+</script>
 
 
 <style>
