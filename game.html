@@ -1,12 +1,11 @@
 <script type="module">
   import {getChoices} from "./ImageChooser.js"
-  window.printChoices = () => {
+  window.returnChoices = () => {
     let choicesStuff = getChoices()
-    alert(choicesStuff[0])
-    alert(choicesStuff[1])
+    return choicesStuff[0], choicesStuff[1]
   }
 </script>
 
-<button onclick="printChoices()">
+<button onclick="let choices = returnChoices(); print(choices[0], choices[1])">
   Print stuff I guess...
 </button>
