@@ -6,6 +6,105 @@
   }
 </script>
 
-<button onclick="let choices = returnChoices(); alert(choices[0]); alert(choices[1])">
-  Print stuff I guess...
-</button>
+<script type="module">
+  let hearts = 3
+  function assignHearts() {
+    if (hearts > 0) {
+      document.getElementById("hearts").innerText = "❤️".repeat(hearts)
+    } else {
+      alert("You lost... Oof... Press OK for some more humiliation.")
+      window.location.assign("https://example.com")
+    }
+  }
+
+  function assignImage() {
+    document.getElementById("image").src = "https://t4.ftcdn.net/jpg/00/53/45/31/360_F_53453175_hVgYVz0WmvOXPd9CNzaUcwcibiGao3CL.jpg"
+  }
+  
+  function showImage(time) {
+    document.getElementById("image").style.display = "block"
+    setTimout(()=>{document.getElementById("image").style.display="none"}, time)
+  
+  function doRound() {
+    let choices = returnChoices()
+    let correctAnswer = choices[0]
+    let ids = choices[1]
+    let timeShown = 500
+    
+    function isCorrect(answer) {
+      if (correctAnswer === ids[answer - 1]) {
+        alert("Correct! Press OK to move to the next image.")
+        doRound()
+        return
+      } else {
+        alert("Incorrect...")
+        hearts--
+        assignHearts()
+      }
+    }
+
+    function assignButtons() {
+      document.getElementById("button1").innerText = ids[0]
+      document.getElementById("button2").innerText = ids[1]
+      document.getElementById("button3").innerText = ids[2]
+      document.getElementById("button4").innerText = ids[3]
+      
+      document.getElementById("button1").onclick = ()=>{isCorrect(1)}
+      document.getElementById("button2").onclick = ()=>{isCorrect(2)}
+      document.getElementById("button3").onclick = ()=>{isCorrect(3)}
+      document.getElementById("button4").onclick = ()=>{isCorrect(4)}
+    }
+
+    assignButtons()
+    assignImage()
+    showImage(timeShown)
+  }
+
+  doRound()
+</script>
+
+
+<h1 id="hearts"></h1>
+<img id="image">
+
+<div id="buttonsContainer">
+  <button id="button1"></button>
+  <button id="button2"></button>
+  <button id="button3"></button>
+  <button id="button4"></button>
+</div>
+
+
+<style>
+  body {
+    background: black;
+  }
+  
+  #hearts {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+  }
+  
+  #image {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 60%;
+    top: 40%;
+    left: 50%;
+  }
+  
+  button {
+    color: white;
+    background: #333333;
+    border: 2px solid white;
+    border-radius: 6px;
+  }
+  
+  #buttonsContainer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 85%;
+    left: 50%;
+  }
+</style>
