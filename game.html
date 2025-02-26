@@ -2,10 +2,10 @@
   import {getChoices} from "./ImageChooser.js"
   window.returnChoices = () => {
     let choicesStuff = getChoices()
-    return choicesStuff[0], choicesStuff[1]
+    return { choicesStuff[0], choicesStuff[1] }
   }
 </script>
 
-<button onclick="let choices = returnChoices(); alert(choices[0], choices[1])">
+<button onclick="let choices = returnChoices(); alert(choices[0]); alert(choices[1]">
   Print stuff I guess...
 </button>
