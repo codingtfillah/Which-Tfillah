@@ -12,6 +12,7 @@
     if (hearts > 0) {
       document.getElementById("hearts").innerText = "❤️".repeat(hearts)
     } else {
+      document.getElementById("hearts").innerText = ""
       alert("You lost... Oof... Press OK for some more humiliation.")
       window.location.assign("https://example.com")
     }
