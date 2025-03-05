@@ -9,17 +9,18 @@ export const getChoices = () => {
     
     let choices = []
     for (let i = 0; i < choicesCount; i++) {
-        const dictValues = Object.values(idDict)
-        if (i < dictValues.length) {
-            let nextChoice = dictValues[randint(0, dictLength - 1)]
+        const dictKeys = Object.keys(idDict)
+        if (i < dictKeys.length) {
+            let nextChoice = dictKeys[randint(0, dictKeys.length - 1)]
             while (choices.includes(nextChoice)) {
-                nextChoice = dictValues[randint(0, dictLength - 1)]
+                nextChoice = dictKeys[randint(0, dictKeys.length - 1)]
             }
             choices.push(nextChoice)
         }
     }
     
     const correctAnswer = choices[randint(0, choices.length-1)]
+    const image = idDict[correctAnswer]
 
-    return [correctAnswer, choices]
+    return [correctAnswer, choices, image]
 }
