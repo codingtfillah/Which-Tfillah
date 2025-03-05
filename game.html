@@ -2,7 +2,7 @@
   import {getChoices} from "./ImageChooser.js"
   window.returnChoices = () => {
     let choicesStuff = getChoices()
-    return [choicesStuff[0], choicesStuff[1]]
+    return [choicesStuff[0], choicesStuff[1], choicesStuff[2]]
   }
 </script>
 
@@ -17,8 +17,8 @@
     }
   }
 
-  function assignImage() {
-    document.getElementById("image").src = "https://t4.ftcdn.net/jpg/00/53/45/31/360_F_53453175_hVgYVz0WmvOXPd9CNzaUcwcibiGao3CL.jpg"
+  function assignImage(imgPath) {
+    document.getElementById("image").src = imgPath
   }
   
   function showImage(time) {
@@ -30,6 +30,7 @@
     let choices = returnChoices()
     let correctAnswer = choices[0]
     let ids = choices[1]
+    let imgPath = choices[2]
     let timeShown = 1500
     
     function isCorrect(answer) {
@@ -57,7 +58,7 @@
     }
 
     assignButtons()
-    assignImage()
+    assignImage(imgPath)
     assignHearts()
     showImage(timeShown)
   }
