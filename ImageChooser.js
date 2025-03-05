@@ -9,11 +9,11 @@ export const getChoices = () => {
     
     let choices = []
     for (let i = 0; i < choicesCount; i++) {
-        const dictLength = Object.values(idDict).length
-        if (i < dictLength) {
-            let nextChoice = Object.values(idDict)[randint(0, dictLength - 1)]
+        const dictValues = Object.values(idDict)
+        if (i < dictValues.length) {
+            let nextChoice = dictValues[randint(0, dictLength - 1)]
             while (choices.includes(nextChoice)) {
-                nextChoice = Object.values(idDict)[randint(0, dictLength - 1)]
+                nextChoice = dictValues[randint(0, dictLength - 1)]
             }
             choices.push(nextChoice)
         }
