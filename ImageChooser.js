@@ -11,9 +11,9 @@ export const getChoices = () => {
     for (let i = 0; i < choicesCount; i++) {
         const dictLength = Object.keys(idDict).length
         if (i < dictLength) {
-            let nextChoice = `id-${randint(1, dictLength)}`
+            let nextChoice = idDict[randint(0, dictLength - 1)]
             while (choices.includes(nextChoice)) {
-                nextChoice = `id-${randint(1, dictLength)}`
+                nextChoice = idDict[randint(0, dictLength - 1)]
             }
             choices.push(nextChoice)
         }
